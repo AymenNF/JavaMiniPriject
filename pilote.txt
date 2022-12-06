@@ -1,0 +1,28 @@
+package projet;
+
+public class pilote extends personne {
+	private int codepilote;
+	public pilote() {
+		
+	}
+    public pilote(String nom,String prenom,int codepilote) {
+    	super(nom,prenom);
+    	this.codepilote=codepilote;
+    	
+    }
+    public int getcode(){
+    	return codepilote;
+    }
+    public void setcode(int code) {
+    	this.codepilote=code;
+    }
+
+
+
+
+
+
+
+
+}
+

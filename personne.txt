@@ -1,0 +1,29 @@
+package projet;
+
+public class personne {
+	private String nom;
+	private String prenom;
+	
+	public personne() {
+		
+	}
+    public personne(String nom,String prenom) {
+    	this.nom=nom;
+    	this.prenom=prenom;
+    	
+    }
+    public String getnom() {
+    	return nom;
+    	
+    }
+    public String getprenom() {
+    	return prenom;
+    }
+    public void setnom(String nom) {
+    	this.nom=nom;
+    }
+    public void setprenom(String prenom) {
+    	this.prenom=prenom;
+    }
+}
+

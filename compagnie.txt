@@ -1,0 +1,25 @@
+package projet;
+
+public class compagnie {
+	private int codecompagnie;
+	private String nom;
+public compagnie() {
+	
+}
+public compagnie(String nom,int codecompagnie) {
+	this.codecompagnie=codecompagnie;
+	this.nom=nom;
+}
+public int getCodecompagnie() {
+	return codecompagnie;
+}
+public void setCodecompagnie(int codecompagnie) {
+	this.codecompagnie = codecompagnie;
+}
+public String getNom() {
+	return nom;
+}
+public void setNom(String nom) {
+	this.nom = nom;
+}
+

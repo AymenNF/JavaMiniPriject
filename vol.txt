@@ -1,0 +1,68 @@
+package projet;
+import java.util.*;
+public class vol {
+	private Date heure_arrivee;
+	private Date heure_depart;
+	private int codevol;
+	private String ville_arrivee;
+	private String ville_depart;
+private vol() {
+	
+}
+private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String ville_depart,int code) {
+	this.heure_arrivee=heure_arrivee;
+	this.heure_depart=heure_depart;
+	this.codevol=code;
+	this.ville_depart=ville_depart;
+	this.ville_arrivee=ville_arrivee;
+}
+public Date getHeure_arrivee() {
+	return heure_arrivee;
+}
+public void setHeure_arrivee(Date heure_arrivee) {
+	this.heure_arrivee = heure_arrivee;
+}
+public Date getHeure_depart() {
+	return heure_depart;
+}
+public void setHeure_depart(Date heure_depart) {
+	this.heure_depart = heure_depart;
+}
+public int getCodevol() {
+	return codevol;
+}
+public void setCodevol(int codevol) {
+	this.codevol = codevol;
+}
+public String getVille_arrivee() {
+	return ville_arrivee;
+}
+public void setVille_arrivee(String ville_arrivee) {
+	this.ville_arrivee = ville_arrivee;
+}
+public String getVille_depart() {
+	return ville_depart;
+}
+public void setVille_depart(String ville_depart) {
+	this.ville_depart = ville_depart;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

@@ -1,0 +1,40 @@
+package projet;
+import java.util.*;
+public class Avion {
+	private int codeavion;
+	private int capacite;
+	private String type;
+	public Avion() {
+		
+	}
+    public Avion(int codeavion,int capacite,String type) {
+    	this.capacite=capacite;
+    	this.codeavion=codeavion;
+    	this.type=type;
+    }
+	public int getCodeavion() {
+		return codeavion;
+	}
+	public void setCodeavion(int codeavion) {
+		this.codeavion = codeavion;
+	}
+	public int getCapacite() {
+		return capacite;
+	}
+	public void setCapacite(int capacite) {
+		this.capacite = capacite;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+    
+
+
+
+
+}
+
+

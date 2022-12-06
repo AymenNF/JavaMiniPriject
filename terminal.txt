@@ -1,0 +1,20 @@
+package projet;
+
+public class terminal {
+	private String nom;
+public terminal() {
+	
+}
+public terminal(String nom) {
+	this.nom=nom;
+}
+public String getNom() {
+	return nom;
+}
+public void setNom(String nom) {
+	this.nom = nom;
+}
+
+
+}
+
