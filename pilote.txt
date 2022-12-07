@@ -16,6 +16,10 @@ public class pilote extends personne {
     public void setcode(int code) {
     	this.codepilote=code;
     }
+    @Override
+	public String toString() {
+		return "Pilote [codepilote=" + codepilote + "]";
+	}
 
 
 
