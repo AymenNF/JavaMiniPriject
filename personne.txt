@@ -25,5 +25,9 @@ public class personne {
     public void setprenom(String prenom) {
     	this.prenom=prenom;
     }
+    @Override
+	public String toString() {
+		return "Personne [nom=" + nom + ", prenom=" + prenom + "]";
+	}
 }
 
