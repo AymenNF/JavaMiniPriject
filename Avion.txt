@@ -31,7 +31,10 @@ public class Avion {
 		this.type = type;
 	}
     
-
+        @Override
+	public String toString() {
+		return "Avion [codeavion=" + codeavion + ", capacite=" + capacite + ", type=" + type + "]";
+	}
 
 
 
