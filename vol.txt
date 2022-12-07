@@ -46,6 +46,47 @@ public String getVille_depart() {
 public void setVille_depart(String ville_depart) {
 	this.ville_depart = ville_depart;
 }
+@Override
+public String toString() {
+	return "vol [heure_arrivee=" + heure_arrivee + ", heure_depart=" + heure_depart + ", codevol=" + codevol
+			+ ", ville_arrivee=" + ville_arrivee + ", ville_depart=" + ville_depart + "]";
+}
+
+public Avion rechercherAvion(int codeavion) {
+	for (int i=0;i<this.ListAvion.size();i++) {
+		if(this.ListAvion.get(i).getCodeavion()==codeavion) {
+			return this.ListAvion.get(i);
+		}
+	}
+	return null;
+	}
+
+public Pilote rechercherPilote(int codepilote) {
+	for (int i=0;i<this.ListPilote.size();i++) {
+		if(this.ListPilote.get(i).getcode()==codepilote) {
+			return this.ListPilote.get(i);
+		}
+	}
+	return null;
+	}
+public compagnie rechercherCompagnie(int codecompagnie) {
+	for (int i=0;i<this.ListCompagnie.size();i++) {
+		if(this.ListCompagnie.get(i).getCodecompagnie()==codecompagnie) {
+			return this.ListCompagnie.get(i);
+		}
+	}
+	return null;
+	}
+public void ajouterAvion(Avion avion) {
+	this.ListAvion.add(avion);
+	
+}
+public void ajouterPilote(pilote pil) {
+	this.ListPilote.add(pil);
+}
+public void ajoutercompagnie(compagnie com) {
+	this.ListCompagnie.add(com);
+}
 
 
 
