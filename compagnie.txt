@@ -22,4 +22,9 @@ public String getNom() {
 public void setNom(String nom) {
 	this.nom = nom;
 }
+@Override
+public String toString() {
+	return "compagnie [codecompagnie=" + codecompagnie + ", nom=" + nom + "]";
+}
+}
 
