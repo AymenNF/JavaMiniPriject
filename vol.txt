@@ -6,6 +6,9 @@ public class vol {
 	private int codevol;
 	private String ville_arrivee;
 	private String ville_depart;
+	private ArrayList<Avion> ListAvion = new ArrayList(10);
+	private ArrayList<Pilote> ListPilote = new ArrayList(10);
+	private ArrayList<compagnie> ListCompagnie = new ArrayList(5);
 private vol() {
 	
 }
