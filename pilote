@@ -1,0 +1,49 @@
+package projet;
+
+public class pilote extends personne {
+	private int codepilote;
+	public pilote() {
+		
+	}
+	public void verification (int codepilote) throws exceptions{
+		if(codepilote>=1000 && codepilote<=9999) {
+			this.codepilote=codepilote;
+		}
+		else {
+			throw new exceptions("code errone");
+		}
+	}
+    public pilote (String nom,String prenom,int codepilote) {
+    	super(nom,prenom);
+    	try {
+    		verification(codepilote);
+    		
+    	
+    }
+    	catch (exceptions e){
+    		
+    		
+    	}
+    	
+    	
+    }
+    
+    public int getcode(){
+    	return codepilote;
+    }
+    public void setcode(int code) {
+    	this.codepilote=code;
+    }
+    @Override
+	public String toString() {
+		return "Pilote [codepilote=" + codepilote + "]";
+	}
+
+
+
+
+
+
+
+
+}
