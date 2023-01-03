@@ -1,0 +1,106 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestConnexion {
+
+	public static void main(String[] args) throws ClassNotFoundException {  
+		
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");  
+		
+		//Etablissement de la connexion 
+		//url -> protocole:sous-protocole://adrese:port/base
+		//utiliser la m�thode getConnection(url, login, motDePasse) 
+		//de la classe DriverManager 
+		String url = "jdbc:mysql://localhost:3306/aero";
+		Connection connexion=null;
+		
+		try {
+			connexion = DriverManager.getConnection(url,"harouy","OUSSAMA2003");
+			//D�claration du statement
+			Statement st = connexion.createStatement();
+			//Ex�cution de la requ�te
+			
+			
+			String requete = "select * from pilote";
+			ResultSet resultat = st.executeQuery(requete);
+			//Exploitation des r�sultats
+			while(resultat.next()) {
+				//Possibilit� 1 : Utiliser les noms des colonnes
+				System.out.println(resultat.getString("nom")+" "+resultat.getString("prenom")+" "+resultat.getInt("id"));
+				/*//Possibilit� 2 : Utiliser les indices des colonnes
+				System.out.println(resultat.getString(2)+" "+resultat.getInt(5));
+				//Possibilit� 3 : R�cuperer l'ensemble des valeurs comme chaines de caract�res
+				System.out.println(resultat.getString(2)+" "+resultat.getString(5));
+			*/}
+		
+			
+			/*
+			String ville="Casablanca";
+			String requete1= "update city set population = "
+					+ "population + 10000 where name='"+ville+"'";
+			int nbre = st.executeUpdate(requete1);
+			System.out.println(nbre+" lignes mises � jour");
+			
+			*/
+			
+			/*
+			
+			String requete = "select * from city where countrycode = 'MAR'";
+			ResultSet resultat = st.executeQuery(requete);
+			ResultSetMetaData metaData = resultat.getMetaData();
+			for(int i=1;i<=metaData.getColumnCount();i++) {
+				System.out.print(metaData.getColumnLabel(i)+"\t");
+			}
+			System.out.println();
+			while(resultat.next()) {
+				for(int i=1;i<=metaData.getColumnCount();i++) {
+					System.out.print(resultat.getString(i)+"\t");
+				}
+				System.out.println();
+			}
+			*/
+			
+			
+			
+			
+		/*	String requete = "select * from city where countrycode=?";
+			PreparedStatement pSt= connexion.prepareStatement(requete);
+			pSt.setString(1, "MAR");
+			ResultSet resultat =pSt.executeQuery();
+			while(resultat.next()) {
+				System.out.println(resultat.getString("name")+" "
+						+resultat.getInt("population"));
+			}
+			
+			
+			/*
+			String requete = "update city set population = "
+					+ "population + ? where name= ?";
+			PreparedStatement pSt= connexion.prepareStatement(requete);
+			pSt.setInt(1, 10000);
+			pSt.setString(2, "Casablanca");
+			pSt.executeUpdate();
+			
+			*/
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Probl�me de connexion");
+		}  
+		
+		
+		
+		
+
+		
+		
+		System.out.println("ok");
+	}
