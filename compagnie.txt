@@ -1,8 +1,10 @@
 package projet;
 
+import java.util.*;
 public class compagnie {
 	private int codecompagnie;
 	private String nom;
+	private HashSet<Pilote> piloteset;
 public compagnie() {
 	
 }
@@ -26,5 +28,9 @@ public void setNom(String nom) {
 public String toString() {
 	return "compagnie [codecompagnie=" + codecompagnie + ", nom=" + nom + "]";
 }
-}
+public <T> boolean contains(T element) {
+    return piloteset.contains(element);
+  }
 
+
+}
