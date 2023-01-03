@@ -1,12 +1,16 @@
 package projet;
 
-public class terminal {
+import java.util.HashMap;
+
+public class Terminal {
 	private String nom;
-public terminal() {
+	private HashMap<vol,Avion> Vol;
+public Terminal() {
 	
 }
-public terminal(String nom) {
+public Terminal(String nom ,HashMap<vol,Avion> Vol) {
 	this.nom=nom;
+	this.Vol=Vol;
 }
 public String getNom() {
 	return nom;
@@ -19,5 +23,15 @@ public String toString() {
 	return "Terminal [nom=" + nom + "]";
 }
 
+public <V,A> A getAvion(V v, HashMap<V,A> map) {
+
+	return map.get(v);
+
+}
+public void ajouterVol(vol v,Avion av) {
+Vol.put(v, av);
 }
 
+
+
+}
