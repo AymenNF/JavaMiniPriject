@@ -6,18 +6,23 @@ public class vol {
 	private int codevol;
 	private String ville_arrivee;
 	private String ville_depart;
-	private ArrayList<Avion> ListAvion = new ArrayList(10);
-	private ArrayList<pilote> ListPilote = new ArrayList(10);
-	private ArrayList<compagnie> ListCompagnie = new ArrayList(5);
+	private ArrayList<Avion> ListAvion;
+	private ArrayList<Pilote> ListPilote;
+	private ArrayList<compagnie> ListCompagnie;
+	private HashMap<vol,Avion> Vol;
 private vol() {
 	
 }
-private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String ville_depart,int code) {
+private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String ville_depart,int code,ArrayList<Avion> ListAvion,ArrayList<Pilote> ListPilote,ArrayList<compagnie> ListCompagnie,HashMap<vol,Avion> Vol) {
 	this.heure_arrivee=heure_arrivee;
 	this.heure_depart=heure_depart;
 	this.codevol=code;
 	this.ville_depart=ville_depart;
 	this.ville_arrivee=ville_arrivee;
+	this.ListAvion=ListAvion;
+	this.ListPilote=ListPilote;
+	this.ListCompagnie=ListCompagnie;
+	this.Vol=Vol;
 }
 public Date getHeure_arrivee() {
 	return heure_arrivee;
@@ -64,7 +69,7 @@ public Avion rechercherAvion(int codeavion) {
 	return null;
 	}
 
-public pilote rechercherPilote(int codepilote) {
+public Pilote rechercherPilote(int codepilote) {
 	for (int i=0;i<this.ListPilote.size();i++) {
 		if(this.ListPilote.get(i).getcode()==codepilote) {
 			return this.ListPilote.get(i);
@@ -84,12 +89,12 @@ public void ajouterAvion(Avion avion) {
 	this.ListAvion.add(avion);
 	
 }
-public void ajouterPilote(pilote pil) {
+public void ajouterPilote(Pilote pil) {
 	try {
 		pil.verification(pil.getcode());
 	    this.ListPilote.add(pil);
 }
-	catch(exceptions e) {
+	catch(Exception e) {
 		e.printStackTrace();
 		
 	}
@@ -98,8 +103,14 @@ public void ajoutercompagnie(compagnie com) {
 	this.ListCompagnie.add(com);
 }
 
+public <V,A> A getAvion(V v, HashMap<V,A> map) {
 
+		return map.get(v);
 
+}
+public void ajouterVol(vol v,Avion av) {
+	Vol.put(v, av);
+}
 
 
 
