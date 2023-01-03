@@ -9,11 +9,11 @@ public class vol {
 	private ArrayList<Avion> ListAvion;
 	private ArrayList<Pilote> ListPilote;
 	private ArrayList<compagnie> ListCompagnie;
-	private HashMap<vol,Avion> Vol;
+
 private vol() {
 	
 }
-private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String ville_depart,int code,ArrayList<Avion> ListAvion,ArrayList<Pilote> ListPilote,ArrayList<compagnie> ListCompagnie,HashMap<vol,Avion> Vol) {
+private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String ville_depart,int code,ArrayList<Avion> ListAvion,ArrayList<Pilote> ListPilote,ArrayList<compagnie> ListCompagnie) {
 	this.heure_arrivee=heure_arrivee;
 	this.heure_depart=heure_depart;
 	this.codevol=code;
@@ -22,7 +22,7 @@ private vol(Date heure_arrivee,Date heure_depart,String ville_arrivee,String vil
 	this.ListAvion=ListAvion;
 	this.ListPilote=ListPilote;
 	this.ListCompagnie=ListCompagnie;
-	this.Vol=Vol;
+	
 }
 public Date getHeure_arrivee() {
 	return heure_arrivee;
@@ -103,14 +103,7 @@ public void ajoutercompagnie(compagnie com) {
 	this.ListCompagnie.add(com);
 }
 
-public <V,A> A getAvion(V v, HashMap<V,A> map) {
 
-		return map.get(v);
-
-}
-public void ajouterVol(vol v,Avion av) {
-	Vol.put(v, av);
-}
 
 
 
