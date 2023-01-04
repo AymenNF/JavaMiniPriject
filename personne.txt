@@ -1,5 +1,7 @@
 package projet;
 
+import java.util.*;
+
 public class personne {
 	private String nom;
 	private String prenom;
@@ -26,8 +28,15 @@ public class personne {
     	this.prenom=prenom;
     }
     @Override
-	public String toString() {
+     public String toString() {
 		return "Personne [nom=" + nom + ", prenom=" + prenom + "]";
 	}
+     public static void affichelist(List<? extends Personne> l ) {
+		Iterator<? extends Personne> it = l.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+	}
+	
 }
 
