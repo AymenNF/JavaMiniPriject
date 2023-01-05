@@ -1,6 +1,5 @@
 package projet;
-import java.util.*;
-public class Avion {
+public class Avion implements Aircraft{
 	private int codeavion;
 	private int capacite;
 	private String type;
@@ -30,11 +29,32 @@ public class Avion {
 	public void setType(String type) {
 		this.type = type;
 	}
-    
-        @Override
+	@Override
 	public String toString() {
 		return "Avion [codeavion=" + codeavion + ", capacite=" + capacite + ", type=" + type + "]";
 	}
+	@Override
+	public void decoller() {
+		System.out.println("décollage réussi");
+
+		
+	}
+	@Override
+	public void atterrir() {
+		System.out.println("attérissage réussi");
+
+		
+	}
+	@Override
+	public void voler() {
+		System.out.println("L'avion vole dans les cieux!");
+
+		
+	}
+
+	
+    
+
 
 
 
